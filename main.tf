@@ -29,6 +29,6 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
 
 
 output "instance_public_ip" {
-  value       = aws_instance.example.public_ip
-  description = "The public IP address of the EC2 instance"
+  value       = aws_instance.public.public_ip
+  description = "The public IP address of the EC2 instance" 
 }
