@@ -7,7 +7,7 @@ resource "aws_instance" "public" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
  
   tags = {
-    Name = "kokhui-ec2"    #Change to your name
+    Name = "khchung-ec2"    #Change to your name
   }
 }
 
@@ -25,4 +25,10 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
+}
+
+
+output "instance_public_ip" {
+  value       = aws_instance.example.public_ip
+  description = "The public IP address of the EC2 instance"
 }
